@@ -5,7 +5,7 @@ This repository presents a comprehensive benchmarking and statistical validation
 
 The project emphasizes methodological rigor, statistical equivalence, and clinical relevance, rather than relying solely on peak accuracy.
 
-##📌 Project Overview
+# 📌 Project Overview
 
 Evaluates 11 state-of-the-art machine learning models
 
@@ -19,7 +19,7 @@ Demonstrates performance equivalence among top models
 
 This work aligns with best practices in medical machine learning research.
 
-##📊 Dataset
+# 📊 Dataset
 
 Name: Wisconsin Diagnostic Breast Cancer (WDBC)
 
@@ -37,7 +37,7 @@ Classes:
 
 The dataset reflects realistic clinical class imbalance.
 
-##⚙️ Methodology
+# ⚙️ Methodology
 Preprocessing
 
 Z-score normalization using StandardScaler
@@ -52,7 +52,7 @@ Stratified 10-fold cross-validation
 
 Independent hold-out test set (20%)
 
-##🤖 Machine Learning Models
+# 🤖 Machine Learning Models
 Support Vector Machines
 
 SVM (RBF kernel)
@@ -85,7 +85,7 @@ XGBoost
 
 All models use optimized hyperparameters consistent with the project report.
 
-##📈 Evaluation Metrics
+# 📈 Evaluation Metrics
 
 Accuracy
 
@@ -115,7 +115,7 @@ Key Result
 
 No statistically significant performance differences were observed among top-performing models at α = 0.05.
 
-##🧪 Key Results
+# 🧪 Key Results
 
 Best Mean Accuracy:
 SVM (RBF) → ~97.7% ± 1.6%
@@ -130,7 +130,7 @@ Sensitivity ≈ 92.9%
 
 These results highlight clinically relevant trade-offs between false positives and false negatives.
 
-##📊 Visualizations
+# 📊 Visualizations
 
 The project includes:
 
