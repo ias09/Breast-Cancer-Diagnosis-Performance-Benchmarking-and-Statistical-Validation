@@ -1,19 +1,23 @@
 # Breast-Cancer-Diagnosis-Performance-Benchmarking-and-Statistical-Validation
-📌 Overview
+Performance Benchmarking and Statistical Validation
 
-This project presents a comprehensive comparative analysis of machine learning models for breast cancer diagnosis using the Wisconsin Diagnostic Breast Cancer (WDBC) dataset.
+This repository presents a comprehensive benchmarking and statistical validation of multiple machine learning models for breast cancer diagnosis using the Wisconsin Diagnostic Breast Cancer (WDBC) dataset.
 
-Unlike many studies that focus solely on peak accuracy, this work emphasizes:
+The project emphasizes methodological rigor, statistical equivalence, and clinical relevance, rather than relying solely on peak accuracy.
 
-Rigorous cross-validation
+📌 Project Overview
 
-Statistical significance testing
+Evaluates 11 state-of-the-art machine learning models
 
-Performance stability
+Uses stratified 10-fold cross-validation
 
-Clinically meaningful evaluation metrics
+Applies non-parametric statistical tests (Friedman & Wilcoxon)
 
-The project benchmarks 11 state-of-the-art machine learning classifiers and demonstrates that several models achieve statistically equivalent performance, highlighting the importance of robustness and clinical context over marginal accuracy gains.
+Reports clinically meaningful metrics
+
+Demonstrates performance equivalence among top models
+
+This work aligns with best practices in medical machine learning research.
 
 📊 Dataset
 
@@ -25,25 +29,30 @@ Samples: 569
 
 Features: 30 real-valued cytological features
 
-Target Classes:
+Classes:
 
 0 → Benign
 
 1 → Malignant (positive class)
 
-The dataset reflects realistic clinical class imbalance (≈63% benign, 37% malignant).
+The dataset reflects realistic clinical class imbalance.
 
 ⚙️ Methodology
-🔹 Preprocessing
+Preprocessing
 
 Z-score normalization using StandardScaler
 
-No feature selection (avoids data leakage)
+No feature selection (prevents data leakage)
 
-Stratified splitting to preserve class distribution
+Stratified data splitting
 
-🔹 Models Evaluated (11)
+Validation Strategy
 
+Stratified 10-fold cross-validation
+
+Independent hold-out test set (20%)
+
+🤖 Machine Learning Models
 Support Vector Machines
 
 SVM (RBF kernel)
@@ -60,7 +69,7 @@ Neural Network
 
 Deep MLP (256–128–64–32)
 
-Ensemble & Boosting Methods
+Ensemble and Boosting Models
 
 Random Forest
 
@@ -74,11 +83,9 @@ LightGBM
 
 XGBoost
 
-🔹 Evaluation Framework
+All models use optimized hyperparameters consistent with the project report.
 
-Stratified 10-fold Cross-Validation
-
-Metrics:
+📈 Evaluation Metrics
 
 Accuracy
 
@@ -90,46 +97,40 @@ F1-score
 
 ROC–AUC
 
-Statistical Testing
-
-Friedman test (global comparison)
-
-Wilcoxon signed-rank test (pairwise comparison vs best model)
-
-🔹 Test Set Evaluation
-
-Independent hold-out test set (20%)
-
-Confusion matrix
-
-Clinically relevant metrics:
-
-Sensitivity
+Clinical Metrics
 
 Specificity
 
-False Positive Rate
+False Positive Rate (FPR)
 
-False Negative Rate
+False Negative Rate (FNR)
 
-🧪 Key Findings
+📐 Statistical Validation
+
+Friedman test for global model comparison
+
+Wilcoxon signed-rank tests for pairwise comparisons against the best-performing model
+
+Key Result
+
+No statistically significant performance differences were observed among top-performing models at α = 0.05.
+
+🧪 Key Results
 
 Best Mean Accuracy:
-SVM (RBF) → 97.7% ± 1.6%
+SVM (RBF) → ~97.7% ± 1.6%
 
-Statistical Result:
-Friedman test shows no statistically significant difference among top-performing models (p > 0.05)
+Independent Test Set Performance:
 
-Clinical Insight:
-Multiple models are viable for deployment; selection should consider:
+Accuracy ≈ 96.5%
 
-Interpretability
+Specificity ≈ 98.6%
 
-Stability
+Sensitivity ≈ 92.9%
 
-Risk tolerance (false positives vs false negatives)
+These results highlight clinically relevant trade-offs between false positives and false negatives.
 
-📈 Visualizations
+📊 Visualizations
 
 The project includes:
 
@@ -137,6 +138,6 @@ Cross-validation performance distributions
 
 ROC curves for all models
 
-Confusion matrix for best model
+Confusion matrix for the best-performing model
 
 Stability analysis across folds
